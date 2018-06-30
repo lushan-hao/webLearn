@@ -1,0 +1,17 @@
+/*通用的样式*/
+*{
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+#warpper{
+    height: 100%;
+    width: 1230px;
+    margin: 0 auto;
+
+}
