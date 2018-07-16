@@ -9,7 +9,7 @@ a{
     text-decoration: none;
 }
 
-#warpper{
+.warpper{
     height: 100%;
     width: 1230px;
     margin: 0 auto;

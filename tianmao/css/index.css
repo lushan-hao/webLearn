@@ -1,3 +1,5 @@
+/*header开始*/
+
 #header{
     height: 32px;
     font-size: 12px;
@@ -95,6 +97,7 @@
     display: none;
     left: -1px;
     border-top: transparent;
+    background-color: #fff;
 }
 #header #warpper-right .split{
     width: 1px;
@@ -116,6 +119,7 @@
     background: #fff;
     box-shadow: 0 0 5px #aaa;
     display: none;
+    z-index:1;
 }
 #header #warpper-right .qr-code::after{
     content:' ';
@@ -132,3 +136,254 @@
 #header #warpper-right .phone:hover .qr-code {
     display: block;
 }
+
+/*header结束*/
+
+/*logo-search开始*/
+
+#logo-search #logo img{
+    width:240px;
+}
+#logo-search{
+    width: 100%;
+    height: 135px;
+}
+
+
+#logo,#search{
+    float: left;
+}
+#logo-search .search-box{
+    width: 625px;
+    height: 36px;
+    border: 2px solid #FF0036;
+}
+
+#logo-search .search-box input{
+    width: 483px;
+    height: 32px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-indent: 10px;
+}
+#logo-search .search-box button{
+    background-color: #FF0036;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: #fff;
+    width: 132px ;
+    border: none;
+    height: 36px;
+    float: right;
+}
+#logo-search ul{
+    margin-top: 10px;
+    margin-left: -50px;
+}
+#logo-search ul li{
+    float: left;
+    margin-left: 10px;
+    border-right: 2px solid #999;
+    padding: 0 12px;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+    color: #cccccc;
+
+}
+#logo-search .last{
+    border-right: none;
+}
+#logo-search #search{
+    margin-top: 38px;
+    margin-left: 50px;
+}
+
+
+#logo-search #search .other-color a{
+    color: #FF0036;
+}
+
+
+/*logo-search结束*/
+
+
+/*middle-top开始*/
+.middle-top{
+    height: 36px;
+}
+.middle-top .middle-pic{
+    margin-left: 200px;
+}
+.middle-top .warpper li{
+    float: left;
+}
+.middle-top .warpper li a:hover{
+    color: #FF0036;
+}
+
+.middle-top .warpper li{
+    font-size: 16px;
+    color: #333333;
+    padding: 0 8px;
+    line-height: 35px;
+    height: 36px;
+}
+.middle-pic img{
+    width: 100px;
+}
+.middle-middle{
+    background-color: #e5e5e5;
+}
+.middle-middle .warpper{
+    height: 500px;
+    background: url("../img/middle.jpg") no-repeat center;
+    position: relative;
+}
+.middle-middle .middle-icn{
+    width: 200px;
+    height: 536px;
+    background-color:#000;
+    opacity:0.55;
+    position: absolute;
+    top: -36px;
+    padding-left: 0px;
+}
+.middle-middle .middle-icn li a{
+     color: #fff;
+ }
+.middle-middle .middle-icn li{
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+}
+
+.middle-middle .middle-icn .icn-first{
+    background-color: #FF0036;
+}
+
+
+
+/*middle-top结束*/
+
+/*road-right开始*/
+
+.road-right{
+    width: 35px;
+    top: 0;
+    bottom: 0;
+    background-color: #949494;
+    position: fixed;
+    right: 0;
+}
+.road-right-first{
+    position: relative;
+}
+
+.road-right-first i{
+    margin-top: 200px;
+    display: block;
+    margin-left: -20px;
+    font-size: 35px;
+}
+.road-right-first-block{
+    width: 90px;
+    height: 35px;
+    background-color: #000;
+    position: absolute;
+    color: #fff;
+    right: 163px;
+    top: 4px;
+    line-height: 35px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.road-right-first-block::after{
+    content: '';
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #000;
+    position: absolute;
+    right: -8px;
+    top: 14px;
+}
+.road-right-first:hover .road-right-first-block{
+    opacity: 1;
+    right: 63px;
+}
+
+
+/*road-right结束*/
+
+/*small-logo开始*/
+.small-logo ul{
+    padding: 0;
+}
+.small-logo-nike{
+    width: 122px;
+    height: 108px;
+    position: relative;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+}
+.small-logo-nike img{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -50px;
+}
+.small-logo-nike:hover .small-logo-change{
+    opacity: 1;
+}
+.small-logo-change{
+    width: 122px;
+    height: 108px;
+    background-color: #949494;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+.small-logo-change .nike{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.small-logo-change .go-in{
+    width: 68px;
+    height: 24px;
+    margin: 20px auto;
+    color: #fff;
+    border-radius: 9px;
+    background-color: #FF0036;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*small-logo结束*/
