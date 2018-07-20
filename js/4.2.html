@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+//    2.	编写程序，根据用户输入的一个数字(0~6)．
+//    通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。
+    var day = window.prompt('请输入数字','0~6')
+    switch (day)
+    {
+        case '1':
+            document.write('星期一');
+            break;
+        case '2':
+            document.write('星期二');
+            break;
+        case '3':
+            document.write('星期三');
+            break;
+        case '4':
+            document.write('星期四');
+            break;
+        case '5':
+            document.write('星期五');
+            break;
+        case '6':
+            document.write('星期六');
+            break;
+        default:
+            document.write('星期日');
+            break;
+    }
+
+
+</script>
+</body>
+</html>
