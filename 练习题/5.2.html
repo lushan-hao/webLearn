@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    2.	编写一个函数Min(x,y)求出x,y这两个数中的最小值，
+//    要求x,y的值由用户通过提示对话框输入。
+
+    function min(a,b){
+        if(a < b){
+            return a;
+        }else if(a > b){
+            return b;
+        }
+    }
+
+
+    var x = window.prompt("请输入x的值",'x');
+    var y = window.prompt("请输入y的值",'y');
+    var z = min(x,y);
+    document.write(z);
+
+
+
+</script>
+</body>
+</html>
