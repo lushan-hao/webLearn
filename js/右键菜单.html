@@ -45,16 +45,16 @@
     var aLi = Omenu.getElementsByTagName('li');
 
     document.oncontextmenu = function(ev){
-        ev == ev || window.event;
+        ev = ev || window.event;
         Omenu.style.display = 'block';
         Omenu.style.top = ev.clientY + 'px';
         Omenu.style.left = ev.clientX + 'px';
         return false;
-    }
+    };
 
     document.onclick = function(){
         Omenu.style.display = 'none';
-    }
+    };
     for(var i=0; i<aLi.length; i++){
         aLi[i].onclick = function(){
             alert(this.innerHTML)
