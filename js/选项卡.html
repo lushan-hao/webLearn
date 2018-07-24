@@ -9,95 +9,73 @@
             margin: 0;
             padding: 0;
         }
-        #all{
+        #container{
             width: 300px;
             height: 240px;
             border: 1px solid #000;
             margin: 100px auto;
         }
-        #all .first{
-            height: 40px;
-            width: 100%;
+        #container #menu{
+            border-bottom: 1px solid;
         }
-        #all .first li{
-            border-left: 1px solid #000;
-            width: 99px;
+        #container #menu li{
             height: 40px;
+            width: 90px;
             float: left;
             line-height: 40px;
-            font-size: 18px;
             text-align: center;
             cursor: pointer;
-        }
-        #all .first #firstOne{
-            border-left: none;
-        }
-        #all .first li:hover{
             background-color: #ccc;
+            margin-right: 10px;
         }
-        #all .second{
-            height: 200px;
-            width: 100%;
-            border-top: 1px solid #000;
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
         }
-        #all .second div{
-            /*width: 300px;*/
-            /*height: 200px;*/
-            /*border-left: none;*/
-            /*background-color: #0f0;*/
+        #contant div{
+            /*为什么不加div不行, 父元素不显示所以没样式*/
             display: none;
         }
-        #all .second .One{
-                                            /*为什么不加.second不可以*/
-            display: block;
+        #container #menu .menu-seclected{
+            background-color: #000000;
+            color: #fff;
         }
-        #all .first .One{
-            background: #000;
-            color: #aaa;
+        #contant .contant-seclected{
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div id="all">
-        <ul class="first">
-            <li class="One">1</li>
+    <div id="container">
+        <ul class="clearfix" id="menu">
+            <li class="menu-seclected">1</li>
             <li>2</li>
             <li>3</li>
         </ul>
-        <div class="second">
-            <div class="One">html</div>
+        <div id="contant">
+            <div class="contant-seclected">html</div>
             <div>css</div>
             <div>js</div>
         </div>
     </div>
 
     <script>
-        var oFirstOne = document.getElementById('firstOne');
-        var oFirstTwo = document.getElementById('firstTwo');
-        var oFirstThree = document.getElementById('firstThree');
-        var oSecondOne = document.getElementById('secondOne');
-        var oSecondTwo = document.getElementById('secondTwo');
-        var oSecondThree = document.getElementById('secondThree');
-        oFirstOne.onclick = function(){
-            oSecondOne.style.backgroundColor = '#ccc';
-            oSecondTwo.style.display = 'none';
-            oSecondThree.style.display = 'none';
-        };
-        oFirstTwo.onclick = function(){
-            oSecondTwo.style.backgroundColor = '#ccc';
-            oSecondOne.style.display = 'none';
-            oSecondThree.style.display = 'none';
-        };
-        oFirstThree.onclick = function(){
-            oSecondThree.style.backgroundColor = '#ccc';
-            oSecondTwo.style.display = 'none';
-            oSecondOne.style.display = 'none';
-        };
-
-
-
-
-
+    var omenu = document.getElementById('menu');
+    var aLi = omenu.getElementsByTagName('li');
+    var ocontant = document.getElementById('contant');
+    var aDiv = ocontant.getElementsByTagName('div');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var j=0; j<aLi.length; j++){
+                    aLi[j].className = '';
+                    aDiv[j].className = '';
+                }
+                this.className = 'menu-seclected';
+                aDiv[this.index].className = 'contant-seclected';
+            };
+        }
 
 
 
