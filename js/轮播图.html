@@ -28,10 +28,10 @@
         right: 10px;
     }
     #turn{
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-    }
+             position: absolute;
+             bottom: 10px;
+             left: 10px;
+         }
     #nav li,#turn span{
         float: left;
         width: 20px;
@@ -62,26 +62,68 @@
         <li>4</li>
     </ul>
     <div id="turn">
-        <span>&lt;</span>
-        <span>&gt;</span>
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
     </div>
 </div>
 <script>
     var onav= document.getElementById('nav');
     var aLi = onav.getElementsByTagName('li');
-    var oContainer = document.getElementById('imgs');
-    var aImg = oContainer.getElementsByTagName('img');
+    var oimgs = document.getElementById('imgs');
+    var aImg = oimgs.getElementsByTagName('img');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var oContainer = document.getElementById('container');
+    var iNowIndex = 0;
+    var timer;                                           //为什么在这里声明，在别地方报错
     for(var i=0; i<aLi.length; i++){
         aLi[i].index = i;
         aLi[i].onmouseover = function(){
-            for(var j=0; j<aLi.length; j++){
-                aLi[j].className = '';
-                aImg[j].className = '';
-            }
-            this.className = 'nav-selected';
-            aImg[this.index].className = 'imgs-selected';
+            iNowIndex = this.index;
+            change();
         }
     }
+    oPrev.onclick = oNext.onclick = function(){
+        if(this === oPrev){
+            if(iNowIndex == 0){
+                iNowIndex = aLi.length;
+            }
+            iNowIndex--;
+        }else{
+            if(iNowIndex == aLi.length-1){
+                iNowIndex = -1;
+            }
+            iNowIndex++;
+        }
+        change();
+    };
+    oPrev.onselectstart = oNext.onselectstart = function(){
+        return false;
+    };
+    play();
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        play();
+    };
+
+
+    function play(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        },1000)
+    }
+
+    function change(){
+        for(var j=0; j<aLi.length; j++){
+            aLi[j].className = '';
+            aImg[j].className = '';
+        }
+        aLi[iNowIndex].className = 'nav-selected';
+        aImg[iNowIndex].className = 'imgs-selected';
+    }
+
 </script>
 </body>
 </html>
