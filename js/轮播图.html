@@ -111,6 +111,7 @@
 
     function play(){
         timer = setInterval(function(){
+//            在这里声明var是局部变量，每回都声明一个新的，而且还消除不了，所以不可以
             oNext.onclick();
         },1000)
     }
@@ -123,7 +124,6 @@
         aLi[iNowIndex].className = 'nav-selected';
         aImg[iNowIndex].className = 'imgs-selected';
     }
-
 </script>
 </body>
 </html>
