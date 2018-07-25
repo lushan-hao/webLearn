@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #small{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        float: left;
+    }
+    #drag{
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        opacity: .5;
+        filter: alpha(opacity=50);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    #big{
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        float: left;
+    }
+    #big-img{
+        display: none;
+    }
+</style>
+<body>
+    <div id="small">
+        <img src="img/f1.jpg" alt=""/>
+        <div id="drag"></div>
+    </div>
+    <div id="big">
+        <img src="img/f2.jpg" alt="" id="big-img"/>
+    </div>
+    <script>
+        var oSmall = document.getElementById('small');
+        var oBigImg = document.getElementById('big-img');
+        var oDrag = document.getElementById('drag');
+        oSmall.onmouseover = function(){
+            oBigImg .style.display = 'block';
+            oDrag .style.display = 'block';
+        }
+        oSmall.onmouseout = function(){
+            oBigImg .style.display = 'none';
+            oDrag .style.display = 'none';
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
