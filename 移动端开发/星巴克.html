@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none    ;
+        }
+        #header{
+            width: 380px;
+            background: #ccc;
+            height: 635px;
+            position: fixed;
+        }
+        #header #menu{
+            margin-left: 50px;
+            width: 350px;
+            height: 96px;
+        }
+        #header #menu li{
+            float: left;
+            margin: 10px;
+        }
+        #header #menu-next{
+            clear: both;
+            height: 272px;
+            width: 404px;
+            overflow: hidden;
+        }
+        #header #menu-next p{
+            width: 296px;
+            height: 72px;
+            font-size: 1.6rem;
+            padding-top: 200px;
+            margin:auto auto;
+        }
+        #header #button{
+            margin-left: 150px;
+        }
+
+        #lunbo{
+            width: 900px;
+            float: left;
+            margin-left: 380px;
+            position: relative;
+        }
+        #lunbo img{
+            width: 944px;
+            display: none;
+        }
+        #lunbo .selected{
+            display: block;
+        }
+        #lunbo #lunbo-next{
+            font-size: 54px;
+            color: #fff;
+            width: 40px;
+            position: absolute;
+            right: 0px;
+            top: 180px;
+            cursor: pointer;
+        }
+        #lunbo #lunbo-next:hover{
+            right: -20px;
+            width: 50px;
+        }
+
+        #image{
+            margin-left: 420px;
+        }
+        #image img{
+            width: 250px;
+            float: left;
+            padding: 12px 20px;
+        }
+        #image img:hover{
+            padding-top: 8px;
+        }
+        @media (max-width: 1024px) {
+            #header{
+                width: 100%;
+                height: 183px;
+                position: absolute;
+            }
+            #header #menu-next{
+                width: 100%;
+                height: 0;
+                height: 36px;
+            }
+            #header #menu-next p{
+                width: 100%;
+                height: 36px;
+                margin-top: 0;
+                padding: 0;
+            }
+            #header #button{
+                width: 100%;
+                height: 51px;
+                margin-left: 0;
+            }
+            #lunbo{
+                top: 183px ;
+                margin-left: 0;
+                width: 100%;
+            }
+            #lunbo img{
+                width: 100%;
+            }
+            #image{
+                width: 100%;
+                display: -webkit-box;
+                top: 580px;
+
+            }
+            #image img{
+                flex-grow: 3;
+                position: static;
+                /*top: 180px;*/
+                left: -440px;
+                /*width: 100%;*/
+                /*height: 0;*/
+                height: 200px;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <ul id="menu">
+            <li>门店</li>
+            <li>我的账户</li>
+            <li>菜单</li>
+            <li>
+            </li>
+        </ul>
+        <div id="menu-next">
+            <p>心情惬意，来杯咖啡吧</p>
+        </div>
+            <div id="button">
+                <button>登陆</button>
+                <button>注册</button>
+            </div>
+    </div>
+    <div id="lunbo">
+        <img src="xbk1.jpg" alt="" id="lunbo-1" class="selected" />
+        <img src="xbk2.jpg" alt="" id="lunbo-2"/>
+        <span id="lunbo-next">&gt;</span>
+    </div>
+    <div id="image">
+        <img src="xbk3.jpg" alt=""/>
+        <img src="xbk4.jpg" alt=""/>
+        <img src="xbk5.jpg" alt=""/>
+    </div>
+    <div id="middle-top">
+        <h4>星享俱乐部</h4>
+        <p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。了解更多 ›</p>
+        <button>登陆</button>
+        <button>注册</button>
+    </div>
+    <div>
+        <img src="" alt=""/>
+    </div>
+    <!--<div id="middle-foot">-->
+
+    <!--</div>-->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <script>
+        var oLunbo = document.getElementById('lunbo');
+        var aImg = oLunbo.getElementsByTagName('img');
+        var aSpan = document.getElementById('lunbo-next');
+        var Nowindex = 0;
+        var timer;
+        timer = setInterval(function(){
+            aSpan.onclick();
+        },5000)
+        aSpan.onclick = function(){
+            if(Nowindex == aImg.length){
+                Nowindex = 0;
+            }
+            for(i=0; i<aImg.length; i++){
+                aImg[i].className = '';
+            }
+            aImg[Nowindex].className = 'selected';
+            Nowindex ++;
+        }
+    </script>
+</body>
+</html>
