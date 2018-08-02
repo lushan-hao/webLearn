@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #head{
+            height: 400px;
+            width: 300px;
+            margin: 100px auto;
+        }
+        #small, #big{
+            height: 20px;
+            width: 30px;
+            background-color: #ccc;
+            color: #000;
+        }
+        #text{
+            width: 300px;
+            height: 50px;
+            border: 1px solid;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div id="head">
+    <span id="big">放大</span>
+    <span id="small">缩小</span>
+    <textarea id="text" rows="8" cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+    </textarea>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /*
+     文本框高度变化练习，功能：
+     1.完成点击放大按钮，文本域高度每次加50像素，直到500像素为止
+     2.完成点击缩小按钮，文本框高度每次减少50像素，直到50像素为止
+     */
+    //思路：
+    //1.放大操作：获取class为bigger的对象，注册单击事件，在单击事件中，获取文本域对象，重新设置其高度，在原有的基础上加50，条件是小于500
+    //2.缩小操作：与放大操作正好相反，重新设置高度，在原有的基础上减50，条件是大于50
+    //要求：尽量使用链式操作
+    //文档就绪函数
+//    $(function(){
+//        $('#big').on('click',function(){
+//            $('#text').height(
+//                   $('#text').height() < 500? $('#text').height() + 50: $('#text').height());
+//        })
+//        $('#small').on('click',function(){
+//            $('#text').height(
+//                    $('#text').height() < 500? $('#text').height() - 50: $('#text').height());
+//        })
+//
+//    });
+//第二
+    /*
+     文本框高度变化练习，功能：
+     1.完成点击放大按钮，文本域高度每次加50像素，直到500像素为止
+     2.完成点击缩小按钮，文本框高度每次减少50像素，直到50像素为止
+     3.除了基本的放大与缩小效果外，还要加入缓冲动画效果，要求在0.4秒内完成动画效果
+     */
+    //思路：
+    //1.放大操作：获取class为bigger的对象，注册单击事件，在单击事件中，使用动画效果，在0.4秒内将文本域对象的高度，增加50，直到500
+    //2.缩小操作：与放大操作正好相反
+    //提示：可能出现的潜在问题，如果动画还未完成，再次点击操作按钮会出现什么样的现象？如何解决？
+
+//        $(function(){
+//            $('#big').on('click',function() {
+//                if (!$('#text').is(':animated')) {
+//                    if ($('#text').height() < 500) {
+//                        $('#text').animate({height: "+=50"}, 400); //重新设置高度，在原有的基础上加50
+//                    }
+//                }
+//            })
+//            $('#small').on('click',function(){
+//                if( !$('#text').is(':animated')){
+//                    if( $('#text').height() > 50 ){
+//                        $('#text').animate({ height : "-=50" },400); //重新设置高度，在原有的基础上加50
+//                    }
+//                }
+//            })
+//        });
+    /*
+     内容滚动练习，功能：
+     1.完成点击向上按钮，文本域内容向上滚动50像素
+     2.完成点击向下按钮，文本域内容向下滚动50像素
+     3.除了基本的滚动效果外，还要加入缓冲动画效果，要求在0.4秒内完成动画效果
+     */
+    //文档就绪函数
+        //思路：
+        //1.放大操作：获取class为up的对象，注册单击事件，在单击事件中，使用动画效果，在0.4秒内将文本内容向上滚动50像素
+        //2.缩小操作：与放大操作正好相反
+        //提示：可能出现的潜在问题，如果动画还未完成，再次点击操作按钮会出现什么样的现象？如何解决？
+
+    $(function(){
+        $('#big').on('click',function(){
+            if(!$('#text').is(':animated')){
+                $('#text').animate({ scrollTop  : '-=50'},400);
+            }
+        })
+        $("#small").on('click',function(){
+            if( !$('#text').is(':animated')){
+                $('#text').animate({scrollTop : '+=50'},400);
+            }
+        })
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        div{
+            padding:2px;
+        }
+        input, textarea {
+            width: 12em;
+            border: 1px solid #888;
+        }
+        .focus {
+            border: 1px solid #f00;
+            background: #fcc;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label  for="username">名称:</label>
+            <input id="username" type="text" value="名称" />
+        </div>
+        <div>
+            <label for="pass">密码:</label>
+            <input id="pass" type="password"  value="密码"/>
+        </div>
+        <div>
+            <label for="msg">详细信息:</label>
+            <textarea id="msg" rows="2" cols="20">详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+<!--   引入jQuery -->
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    /*
+     文本框得到/失去焦点练习，完成文本框得到/失去焦点时动态变换文本框样式功能。
+     */
+
+// 第一个   $(function(){
+//        $('input, textarea ').on('click',function(){
+//            $(this).focus().addClass('focus');
+//        }).blur(function(){
+//            $(this).removeClass('focus');
+//        })
+//    })
+
+/*
+ 文本框得到/失去焦点练习，功能：
+ 1.文本框得到/失去焦点时动态变换文本框样式
+ 2.文本框得到时，清除文本框默认值；失去焦点时，如果文本框值未改变，恢复默认值，否则使用修改值
+ */
+//思路：
+//功能1：选中所有的输入框，注册获得焦点事件，添加样式：focus；
+// 注册失去焦点事件，动态移除样式：focus
+//功能2：获得焦点时，如果文本框的值等于默认值，则清空文本框；
+// 失去焦点时，如果文本框的值等于空字符串，则恢复默认值
+//提示：defaultValue属性可以得到文本框的默认值
+//要求：尽量使用链式操作
+
+    $(function(){
+        $(':input').focus(function(){
+            $(this).addClass('focus');
+            if($(this).val() == this.defaultValue){
+               this.value = '';
+            }
+        }).blur(function(){
+            $(':input').removeClass('focus');
+            if( $(this).val() == ''){
+                this.value = this.defaultValue;
+            }
+        })
+    })
+
+
+
+</script>
+
+</body>
+</html>

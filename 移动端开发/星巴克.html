@@ -41,25 +41,27 @@
             margin-left: 150px;
         }
 
-        #lunbo{
-            width: 900px;
-            float: left;
+        #body{
             margin-left: 380px;
+        }
+        #lunbo{
+            visibility: hidden;
+            width: 900px;
             position: relative;
         }
-        #lunbo img{
-            width: 944px;
-            display: none;
+        #lunbo #warrper{
+            overflow: hidden;
         }
-        #lunbo .selected{
-            display: block;
+        #lunbo img{
+            float: left;
+            width: 944px;
         }
         #lunbo #lunbo-next{
             font-size: 54px;
             color: #fff;
             width: 40px;
             position: absolute;
-            right: 0px;
+            right: -20px;
             top: 180px;
             cursor: pointer;
         }
@@ -68,22 +70,44 @@
             width: 50px;
         }
 
-        #image{
-            margin-left: 420px;
-        }
-        #image img{
-            width: 250px;
-            float: left;
-            padding: 12px 20px;
-        }
-        #image img:hover{
-            padding-top: 8px;
-        }
+        /*#image{*/
+            /*margin-left: 420px;*/
+        /*}*/
+        /*#image img{*/
+            /*width: 250px;*/
+            /*float: left;*/
+            /*padding: 12px 20px;*/
+        /*}*/
+        /*#image img:hover{*/
+            /*padding-top: 8px;*/
+        /*}*/
+        /*#middle-top{*/
+            /*width: 400px;*/
+            /*padding-top: 630px;*/
+            /*margin-left: 420px;*/
+        /*}*/
+        /*#middle-top p{*/
+            /*margin-top: 10px;*/
+            /*font-size: 20px;*/
+        /*}*/
+        /*#middle-top h1{*/
+            /*height: 40px;*/
+            /*line-height: 40px;*/
+            /*text-align: center;*/
+        /*}*/
+        /*#middle-top button{*/
+            /*font-size: 20px;*/
+            /*margin-left: 50px;*/
+            /*margin-top: 30px;*/
+        /*}*/
+        /*#middle-middle img{*/
+            /*padding-top: 630px;*/
+            /*margin-left: 520px;*/
+        /*}*/
         @media (max-width: 1024px) {
             #header{
                 width: 100%;
                 height: 183px;
-                position: absolute;
             }
             #header #menu-next{
                 width: 100%;
@@ -101,32 +125,32 @@
                 height: 51px;
                 margin-left: 0;
             }
-            #lunbo{
-                top: 183px ;
-                margin-left: 0;
-                width: 100%;
-            }
-            #lunbo img{
-                width: 100%;
-            }
-            #image{
-                width: 100%;
-                display: -webkit-box;
-                top: 580px;
-
-            }
-            #image img{
-                flex-grow: 3;
-                position: static;
-                /*top: 180px;*/
-                left: -440px;
+            /*#lunbo{*/
+                /*top: 183px ;*/
+                /*margin-left: 0;*/
                 /*width: 100%;*/
-                /*height: 0;*/
-                height: 200px;
+            /*}*/
+            /*#lunbo img{*/
+                /*width: 100%;*/
+            /*}*/
+            /*#image{*/
+                /*width: 100%;*/
+                /*display: -webkit-box;*/
+                /*top: 580px;*/
 
-            }
-        }
-    </style>
+            /*}*/
+            /*<!--#image img{-->*/
+                /*<!--flex-grow: 3;-->*/
+                /*<!--position: static;-->*/
+                /*<!--/!*top: 180px;*!/-->*/
+                /*<!--left: -440px;-->*/
+                /*<!--/!*width: 100%;*!/-->*/
+                /*<!--/!*height: 0;*!/-->*/
+                /*<!--height: 200px;-->*/
+
+            /*<!--}-->*/
+        /*<!--}-->*/
+   </style>
 </head>
 <body>
     <div id="header">
@@ -145,130 +169,78 @@
                 <button>注册</button>
             </div>
     </div>
-    <div id="lunbo">
-        <img src="xbk1.jpg" alt="" id="lunbo-1" class="selected" />
-        <img src="xbk2.jpg" alt="" id="lunbo-2"/>
-        <span id="lunbo-next">&gt;</span>
+    <div id="body">
+        <div id="lunbo">
+            <div id="warrper">
+                <img src="xbk1.jpg" alt=""/>
+                <img src="xbk2.jpg" alt=""/>
+                <img src="xbk1.jpg" alt=""/>
+                <span id="lunbo-next">&gt;</span>
+            </div>
+        </div>
+        <!--<div id="image">-->
+            <!--<img src="xbk3.jpg" alt=""/>-->
+            <!--<img src="xbk4.jpg" alt=""/>-->
+            <!--<img src="xbk5.jpg" alt=""/>-->
+        <!--</div>-->
     </div>
-    <div id="image">
-        <img src="xbk3.jpg" alt=""/>
-        <img src="xbk4.jpg" alt=""/>
-        <img src="xbk5.jpg" alt=""/>
-    </div>
-    <div id="middle-top">
-        <h4>星享俱乐部</h4>
-        <p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。了解更多 ›</p>
-        <button>登陆</button>
-        <button>注册</button>
-    </div>
-    <div>
-        <img src="" alt=""/>
-    </div>
+
+    <!--<div id="middle-top">-->
+        <!--<h1>星享俱乐部</h1>-->
+        <!--<p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。了解更多 ›</p>-->
+        <!--<button>登陆</button>-->
+        <!--<button>注册</button>-->
+    <!--</div>-->
+    <!--<div id="middle-middle">-->
+        <!--<img src="logo.svg" alt=""/>-->
+    <!--</div>-->
     <!--<div id="middle-foot">-->
 
     <!--</div>-->
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <script src="../js/jq/jquery-1.12.4.js"></script>
     <script>
-        var oLunbo = document.getElementById('lunbo');
-        var aImg = oLunbo.getElementsByTagName('img');
-        var aSpan = document.getElementById('lunbo-next');
-        var Nowindex = 0;
-        var timer;
-        timer = setInterval(function(){
-            aSpan.onclick();
-        },5000)
-        aSpan.onclick = function(){
-            if(Nowindex == aImg.length){
-                Nowindex = 0;
-            }
-            for(i=0; i<aImg.length; i++){
-                aImg[i].className = '';
-            }
-            aImg[Nowindex].className = 'selected';
-            Nowindex ++;
-        }
+
+        var w = document.body.clientWidth;
+        $('#warper').css('width',function(){
+            return 3 * w;
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        var oLunbo = document.getElementById('lunbo');
+//        var aImg = oLunbo.getElementsByTagName('img');
+//        var aSpan = document.getElementById('lunbo-next');
+//        var Nowindex = 0;
+//        var timer;
+//        timer = setInterval(function(){
+//            aSpan.onclick();
+//        },1000)
+//        aSpan.onclick = function(){
+//            if(Nowindex == aImg.length){
+//                Nowindex = 0;
+//            }
+//            for(i=0; i<aImg.length; i++){
+//                aImg[i].className = '';
+//            }
+//            aImg[Nowindex].className = 'selected';
+//            Nowindex ++;
+//        }
     </script>
 </body>
 </html>
