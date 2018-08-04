@@ -43,29 +43,24 @@ $map: (da:#ccc, xiao: #000);
     color: map-get($map,da);
 }
 
-// $m: (light: #fff, dark: #000);
 
-// #div10{
-//     // background: map-get($m, dark);
-//     background: map-keys($m);
-// }
 
-// $fz: font-size;
-// #div11{
-//     #{$fz}: 20px
-// }
+$fz: font-size;
+#div11{
+    #{$fz}: 20px
+}
 
 
 
-// @function foo($arg){
-//     @if($arg == 1){
-//         @return #000;
-//     }@else if($arg == 2){
-//         @return #fff;
-//     }@else{
-//         @return #ccc;
-//     }
-// }
+@function foo($arg){
+    @if($arg == 1){
+        @return #000;
+    }@else if($arg == 2){
+        @return #fff;
+    }@else{
+        @return #ccc;
+    }
+}
 
 // #div12{
 //     background: foo(5);
