@@ -1,8 +1,109 @@
 $color: #f00;
 $w: 200px;
 $h: 300px;
+$bg : background;
 #div1{
-    background:$color;
-    width:$w;
+    background: $color;
+    width: $w;
     height: $h;
+    .aa{
+        font-size: 14px;
+        .bb{
+            height: 20px;
+        }
+        &-cc{
+        height: $w;
+        }
+        &:hover{
+            width: $w;
+        }
+    }
 };
+#div2{
+    #{$bg} : #f00;
+}
+@mixin xx($num,$c:#ccc){
+    width: $w;
+    height: $num;
+    $bg : $c;
+}
+
+#div3{
+    @include xx(5px,#bbb);
+    font-size: 20px;
+}
+#div4{
+    @extend #div3;
+    background: $color;
+}
+@import 'base/common.css';
+
+$map: (da:#ccc, xiao: #000);
+#div5{
+    color: map-get($map,da);
+}
+
+// $m: (light: #fff, dark: #000);
+
+// #div10{
+//     // background: map-get($m, dark);
+//     background: map-keys($m);
+// }
+
+// $fz: font-size;
+// #div11{
+//     #{$fz}: 20px
+// }
+
+
+
+// @function foo($arg){
+//     @if($arg == 1){
+//         @return #000;
+//     }@else if($arg == 2){
+//         @return #fff;
+//     }@else{
+//         @return #ccc;
+//     }
+// }
+
+// #div12{
+//     background: foo(5);
+// }
+
+
+// $column: 12;
+// @for $i from 1 to $column{
+//     .col-lg-#{$i}{
+//         width: percentage($i / 100);
+//     }
+// }
+
+// $icons: plus music search heart;
+
+// @each $icon in $icons {
+//     .glyphicon-#{$icon}{
+//         background: url($icon+ '.png');
+//     }
+// }
+
+// $i:5;
+// @while $i > 0 {
+//     .col-md-#{$i}{
+//         width: percentage($i / 100);
+//     }
+//     $i: $i - 2;
+// }
+
+// $map: (light: #fff, dark: #000);
+// @function get-color($color){
+//     @if(map-has-key($map, $color)){
+//         @return  map-get($map, $color);
+//     }@else if(){
+//         @return #ccc;
+//     }
+// }
+
+// #div13{
+//     background: get-color(light);
+// }
