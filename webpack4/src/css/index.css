@@ -1,0 +1,11 @@
+#div1{
+    height: 400px;
+    width: 400px;
+    background: #00f;
+}
+#div2{
+    width: 500px;
+    height: 500px;
+    font-size: 12px;
+    background: url(../img/logo.png) no-repeat;
+}
