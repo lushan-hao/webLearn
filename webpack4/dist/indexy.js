@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e95e81acc67fa685a77c";
+/******/ 	var hotCurrentHash = "759f8418f16337fa67cc";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -259,7 +259,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "index";
+/******/ 			var chunkId = "indexy";
 /******/ 			// eslint-disable-next-line no-lone-blocks
 /******/ 			{
 /******/ 				/*globals chunkId */
@@ -789,31 +789,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire("./src/index.js")(__webpack_require__.s = "./src/index.js");
+/******/ 	return hotCreateRequire("./src/index1.js")(__webpack_require__.s = "./src/index1.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/css/index.css":
-/*!***************************!*\
-  !*** ./src/css/index.css ***!
-  \***************************/
+/***/ "./src/index1.js":
+/*!***********************!*\
+  !*** ./src/index1.js ***!
+  \***********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/css/index.css?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/index.css */ \"./src/css/index.css\");\n/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\r\nlet oDiv1 = document.querySelector('#div1');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var oButton = document.getElementById('button1');\r\noButton.onclick = function(){\r\n    var n = 5;\r\n    while(n<10){\r\n        alert('5');\r\n        n++;\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/index1.js?");
 
 /***/ })
 

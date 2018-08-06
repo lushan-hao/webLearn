@@ -5,7 +5,8 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        'index':'./src/index.js'
+        'indexx':'./src/index.js',
+        'indexy': './src/index1.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -32,6 +33,7 @@ module.exports = {
                 }]
             },{
                 test: /\.(html|htm)$/i,
+                //include:[path.resolve(__dirname,"src")],
                 loader: 'html-withimg-loader'
             }
         ]
@@ -40,7 +42,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlPlugin({
             filename: 'indexa.html',
-            chunks: ['index'],
+            title: 'indexa---title',
+            chunks: ['indexx'],
             minify: {
                 removeAttributeQuotes: true,
                 // collapseWhitespace: true
@@ -50,7 +53,8 @@ module.exports = {
         }),
         new HtmlPlugin({
             filename: 'indexb.html',
-            chunks: ['index1'],
+            title: 'indexb---title',
+            chunks: ['indexy'],
             minify: {
                 removeAttributeQuotes: true,
                 // collapseWhitespace: true
