@@ -8,4 +8,8 @@
     height: 500px;
     font-size: 12px;
     background: url(../img/logo.png) no-repeat;
+    transform: (30deg);
+}
+#ufhaoko{
+    width: 100px;
 }
