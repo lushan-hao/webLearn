@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #earn{
+            width: 300px;
+        }
+        #earn div{
+            width: 300px;
+            height: 40px;
+            background: #ccc;
+            margin-top: 10px;
+        }
+        #earn .red{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="hh" @submit.prevent>
+    <form action="" id="all" >
+            <label for="">名称</label>
+            <input type="text" v-model="called" placeholder="请输入商品名称">
+            <label for="">价格</label>
+            <input type="number" v-model.number="money">
+            <button @click="add()" type="submit">add</button>
+            <br>
+    </form>
+    <form action="">
+        <input type="text" v-model="search">
+            <button @click="searchA()" type="submit">search</button> 
+    </form>
+                  
+    
+    <div id="earn">
+            <div v-for="(a,index) in done" @click="huan(a)" :class="[a.color ? 'red' :''  ]">
+                <input type="checkbox" @click.stop v-model='put' :value="index"> 
+                {{a.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;{{a.price}}
+            <button @click.stop="del(index)">删除</button>    
+            </div>        
+    </div>
+    <button @click="delput" type="button">删除选中</button>
+    总价：
+    <span>
+            {{change}}
+    </span>
+    </div>
+    
+    
+<script src="./vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#hh",
+        data: {
+            done: [ {
+                    name: '衣服',
+                    price: 123,
+                    color: false
+                },{
+                    name: '裤子',
+                    price: 564,
+                    color: false
+                },{
+                    name: '鞋',
+                    price: 66,
+                    color: false
+                },{
+                    name: 'iphoneX',
+                    price: 8888,
+                    color:  false
+                }, {
+                    name: '电脑',
+                    price: 986,
+                    color: false
+                }
+            ],
+            put: [],
+            called: '',
+            money: '',
+            search: ''  
+        },
+        methods: {
+            huan(a){
+                a.color = !a.color;
+            },
+            del(index){
+                 this.done.splice(index,1);
+            },
+            delput(){
+                this.done = this.done.filter((element,index) => {      //this是vue
+                        if(!this.put.includes(index)){
+                            return element;
+                        }
+                });
+                this.put = [];
+            },
+            add(){
+             //   console.log(this);                this指向vue
+            this.done.push({
+                name: this.called,
+                price: this.money,
+                color: false
+            });
+            this.called =  '';
+            this.money =  '';
+            },
+            searchA(){
+                this.done = this.done.filter(function(element,index){
+                    if((element.name.includes(this.search))||((element.price+'').includes(this.search))){
+                        return element;
+                    }
+                }.bind(this));
+            }
+        },
+        computed: {
+            change(){
+                let sum = 0;
+                // console.log(this);          这里this是vue
+                this.done.forEach(element => {              //这里的this是对象
+                    if(element.color){
+                        sum = sum + element.price;
+                }
+                });
+                return sum;
+            }
+        }
+    })
+
+
+
+</script>
+
+</body>
+</html>
