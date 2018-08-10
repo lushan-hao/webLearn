@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="app">
+    <button @click="add">add</button>
+    <li v-for = "(a) in arr">
+        {{a}}
+    </li>
+</div>
+
+
+
+<body>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                arr: ['a','b','c','d']
+            },
+            methods: {
+                add(){
+                    // console.log(this.arr);           修改不了
+                    // this.arr[1] = 'xxx';
+                    Vue.set(this.arr,1,'xx')
+                }
+            }
+
+        })
+            
+    </script>
+</body>
+</html>
