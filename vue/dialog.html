@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        position: absolute;
+        top:0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5)
+    }
+    .box .dialog{
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        background: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: 1px solid ;
+        }
+    .box .dialog .dialog-title{
+        height: 30px;
+        background: #ccc;
+        padding: 0 10px;
+        line-height: 30px;
+    }
+    .box .dialog .dialog-title .dialog-title-left{
+        float: left;
+    }
+    .box .dialog .dialog-title .close{
+        float: right;
+        cursor: pointer;
+
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <button @click='isLogin=true'>登陆</button>
+        <button @click='isRegist=true'>注册</button>
+
+
+        <cop v-show='isLogin' @onss="isLogin=false">
+            <span slot="title">登陆</span>
+            <form slot="content">
+                用户名：<input type="text">
+                <br>
+                密码：<input type="password">
+                <br>
+                <button>登陆</button>
+            </form>
+
+
+        </cop>
+
+        <cop v-show='isRegist' @onss='isRegist=false'>
+            <span slot="title">注册</span>
+            <form slot="content">
+                    用户名：<input type="text">
+                    <br>
+                    密码：<input type="password">
+                    <br>
+                    邮箱：<input type="text">
+                    <br>
+                    <button>注册</button>
+            </form>
+        </cop>
+
+    </div>
+
+    <template id="temp">
+        <div class="box">
+            <div class="dialog">
+                <div class="dialog-title">
+                    <div class="dialog-title-left">
+                        <slot name='title'></slot>
+                    </div>
+                    <div @click="$emit('onss')" class="close">[X]</div>
+                </div>
+                <div class="content">
+                    <slot name='content'></slot>
+                </div>
+            </div>
+        </div>   
+    </template>
+
+
+
+
+
+
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            isLogin: false,
+            isRegist: false
+        },
+        components: {
+            'cop': {
+                template: '#temp'
+            }
+        }
+    })
+    
+    //在写这个html结构有错误，尽量选择器用class，而且form写错了，报错
+</script>
+</body>
+</html>

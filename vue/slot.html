@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <comp1>
+        <span slot="title">登陆</span>
+        <template slot="contont">
+        用户名: <input type="text">
+        密码： <input type="text">
+        </template>
+
+        
+
+    </comp1>
+
+
+</div>    
+
+
+
+
+<template id="temp">
+    <div>   
+       <h1>
+        <slot name='title'></slot>
+    </h1>
+    <form action="">
+            <slot name='contont'></slot>
+    </form> 
+    </div>
+    
+</template>
+
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        components: {
+            comp1: {
+                template: '#temp'
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
