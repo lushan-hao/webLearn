@@ -1,0 +1,53 @@
+new Vue({
+    el: '#app',
+    data: {
+        count: 0,
+        loading: true,
+        movieUrl: 'https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters',
+        movieList: [],
+        timer: null
+    },
+    methods: {
+        destory() {
+            this.$destroy();
+        }
+    },
+    beforeCreate() {
+        console.log('beforeCreate');
+    },
+    created() {
+        console.log('created');
+        // console.log(this.$el);
+        document.getElementById('username').focus();
+
+        this.timer = setInterval(()=>{
+            this.count++;
+            console.log('timer');
+        }, 1000);
+    },
+    beforeMount() {
+        console.log('beforeMount');
+    },
+    mounted() {
+        console.log('mounted');
+        this.loading = false;
+        // console.log(this.$el);
+        /* axios.get(this.movieUrl).then(res=>{
+            console.log(res.data.subjects);
+            this.movieList = res.data.subjects;
+        }); */
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate');
+    },
+    updated() {
+        console.log('updated');
+    },
+    beforeDestroy() {
+        console.log('beforeDestroy');
+        clearInterval(this.timer);
+    },
+    destroyed() {
+        console.log('destroyed');
+    }
+});
