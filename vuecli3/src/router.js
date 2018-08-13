@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Mine from './views/Mine.vue'
+import Mine from './views/Mine.vue';
+import Error from './views/Error.vue'
 
 Vue.use(Router);
 
@@ -25,6 +26,9 @@ export default new Router({
     {
       path: '/mine',
       component: Mine,
-    },
+    },{
+      path: '/*',
+      component: Error,
+    }
   ],
 });

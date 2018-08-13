@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
 
   },
-  mutations: {
+  mutations: {                 //改变值
 
   },
   actions: {
