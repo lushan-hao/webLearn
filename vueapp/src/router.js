@@ -36,21 +36,6 @@ export default new Router({
         component: Photo,
       },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // {
     //   path: '/about',
     //   name: 'about',

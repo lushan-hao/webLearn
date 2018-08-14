@@ -1,19 +1,14 @@
 <template>
   <div id="app">
+   <Comheader :selectMenu="selectMenu"> </Comheader> 
 
-   <Comheader> </Comheader> 
+      <router-view class="content"/>
 
-      <router-view/>
-
-  <Comfooter></Comfooter>  
+  <Comfooter @changeTitle="changeTitle" :menuList="menuList"></Comfooter>  
      
   
   </div>
 </template>
-
-
-
-
 
 <script>
 
@@ -25,9 +20,37 @@ export default{
     Comfooter,
     Comheader,
   },
+  methods: {
+    changeTitle(menu){
+      this.selectMenu = menu;
+    }
+  },
   data () {
     return {
-      
+      menuList:[
+        {
+          title: '电影',
+          bgColor: '#e54847',
+          name: 'movie',
+          path: '/movie'
+        },{
+          title: '音乐',
+          bgColor: '#009688',
+          name: 'music',
+          path: '/music'
+        },{
+          title: '书籍',
+          bgColor: '#795548',
+          name: 'book',
+          path: '/book'
+        },{
+          title: '图片',
+          bgColor: '#3f51b5',
+          name: 'photo',
+          path: '/photo'
+        }
+      ],
+      selectMenu: {},
     }
   }
 }
@@ -37,6 +60,9 @@ export default{
 
 
 
-<style lang="sass" scoped>
+<style lang="scss">
+.content{
+  margin: 1rem 0;
+}
 
 </style>
