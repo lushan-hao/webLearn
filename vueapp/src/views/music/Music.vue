@@ -1,21 +1,23 @@
 <template>
-    <player :musicList= 'musicList'></player>
+    <player :musicList="musicList"></player>
 </template>
 
-<script>
-import Player from '@/components/Player.vue'
-import axios from 'axios';
 
+<script>
+import Player from '@/components/Player.vue';
+import axios from  'axios';
 export default {
-    data () {
+    data(){
         return {
-            musicList: [],
-        }
+            musicList: []
+        };
     },
-    created() {
-        axios.get('/data/musicdata.json').then(res =>{
-            this.musicList =  res.data.musicData;
-        })
+    created(){
+        // console.log('music');
+        this.$emit('switchTab', 'music');
+        axios.get('/data/musicdata.json').then(res=>{
+            this.musicList = res.data.musicData;
+        });
     },
     components: {
         Player
@@ -23,7 +25,7 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 
 </style>
+

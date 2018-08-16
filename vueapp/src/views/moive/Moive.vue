@@ -1,8 +1,8 @@
 <template>
     <div>
        <ul>
-        <li v-for="movie in movieList" :key="movie.id" class="movie">
-            <div class="movie-img">
+        <li @click="gotoDetail(movie.id)" v-for="movie in movieList" :key="movie.id" class="movie">
+              <div class="movie-img">
                 <img :src="movie.images.large" alt="">
             </div>  
             <div class="movie-info">
@@ -13,7 +13,8 @@
                         {{item.name}}&nbsp;
                     </span>
                 </div>
-            </div>
+            </div>  
+            
         </li>
     </ul> 
     <div class="end" v-show="isEnd">
@@ -56,6 +57,9 @@ export default {
         this.movieList = this.movieList.concat(getList);
         this.isLoading = false;
       });
+    },
+    gotoDetail(movieId){
+      this.$router.push(`/moviedetail/${movieId}`);
     }
   },
   created() {
@@ -75,16 +79,7 @@ export default {
     };
   }
 };
-    // import axios from "axios";
-    
-    // export default{
-    //     data () {
-    //         return {
-    //              movieList: [],
-    //              isLoading: true,
-    //             isEnd: false
-    //         };
-    //     },
+
     //     created () {
     //         let url1 = "http://api.myjson.com/bins/pb8vw";
     //         let url2 ="https://bird.ioliu.cn/v2?url=https://api.douban.com/v2/movie/top250?";

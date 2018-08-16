@@ -1,8 +1,7 @@
 module.exports = {
-  devServer: {
-    port: 8083,
-    open: true
-  },
-  lintOnSave: false
-  
+    lintOnSave: false,
+    devServer: {
+        port: 8082,
+        open: true
+    }
 };

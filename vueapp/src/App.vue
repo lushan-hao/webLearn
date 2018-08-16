@@ -1,33 +1,31 @@
 <template>
   <div id="app">
-   <Comheader :selectMenu="selectMenu"> </Comheader> 
-
-      <router-view class="content"/>
-
-  <Comfooter @changeTitle="changeTitle" :menuList="menuList"></Comfooter>  
-     
-  
+    <CommonHeader :selectMenu="selectMenu"></CommonHeader>
+    <router-view class="content" @switchTab="switchTab"/>
+    <CommonFooter :footerBgColor="selectMenu.bgColor" :menuList="menuList"></CommonFooter>
   </div>
 </template>
 
 <script>
-
-import Comfooter from '@/components/Comfooter.vue';
-import Comheader from '@/components/Comheader.vue';
-
-export default{
+import CommonHeader from '@/components/CommonHeader.vue';
+import CommonFooter from '@/components/CommonFooter.vue';
+export default {
   components: {
-    Comfooter,
-    Comheader,
+    CommonHeader,
+    CommonFooter
   },
   methods: {
-    changeTitle(menu){
-      this.selectMenu = menu;
+    switchTab(menuName){ // 'music'
+      this.menuList.forEach(menu => {
+        if(menu.name === menuName){
+          this.selectMenu = menu;
+        }
+      });
     }
   },
   data () {
     return {
-      menuList:[
+      menuList: [
         {
           title: '电影',
           bgColor: '#e54847',
@@ -50,13 +48,11 @@ export default{
           path: '/photo'
         }
       ],
-      selectMenu: {},
+      selectMenu: {}, // 当前选中的菜单,
     }
   }
 }
-
 </script>
-
 
 
 
