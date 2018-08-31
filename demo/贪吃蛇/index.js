@@ -1,12 +1,23 @@
-var scoreBox = document.getElementById('score');
+var scoreBox = document.getElementById("score");
 var oStart = document.getElementById("startr");
 var oPlay = document.getElementById("play");
 var oMain = document.getElementById("main");
 var oOne = document.getElementById("one");
 var oSecond = document.getElementById("second");
 var oStartImg = document.getElementById("startimg");
+var over = document.getElementById("over");
+var fen = document.getElementById("fen");
+var close = document.getElementById("close");
 var snakeMove;
 var speed = 200;
+var snakeMove;
+close.onclick = function() {
+  over.style.display = "none";
+  oOne.style.display = "none";
+  oStartImg.style.display = 'block';
+  oStartImg.style.zIndex = "999";
+  oPlay.style.display = 'none';
+};
 oStartImg.onclick = function() {
   oPlay.style.display = "block";
   oOne.style.display = "block";
@@ -17,16 +28,27 @@ oStartImg.onclick = function() {
   food();
   snake();
   snakeMove = setInterval(function() {
+    // console.log('1');
     move();
   }, speed);
 };
 oSecond.onclick = function() {
   oOne.style.display = "block";
   oSecond.style.display = "none";
+  snakeMove = setInterval(function() {
+    // console.log('2');
+    move();
+  }, speed);
+  bindEvent();
 };
 oOne.onclick = function() {
   oOne.style.display = "none";
   oSecond.style.display = "block";
+  clearInterval(snakeMove);
+  document.onkeydown = function(e){
+    e.returnValue = false;
+    return false;
+  }
 };
 
 function init() {
@@ -70,7 +92,7 @@ function snake() {
     snake.style.height = this.snakeH + "px";
     snake.style.position = "absolute";
     snake.style.left = this.snakeBody[i][0] * 20 + "px";
-    snake.styletop = this.snakeBody[i][1] * 20 + "px";
+    snake.style.top = this.snakeBody[i][1] * 20 + "px";
     snake.classList.add(this.snakeBody[i][2]);
     this.mapDiv.appendChild(snake).classList.add("snake");
     switch (this.direct) {
@@ -113,43 +135,46 @@ function move() {
   }
   removeClass("snake");
   snake();
-  if(this.snakeBody[0][0] == this.foodX && this.snakeBody[0][1] == this.foodY){
+  if (
+    this.snakeBody[0][0] == this.foodX &&
+    this.snakeBody[0][1] == this.foodY
+  ) {
     this.score += 1;
     scoreBox.innerHTML = this.score;
-    removeClass('food');
+    removeClass("food");
     food();
     var snakeEndx = this.snakeBody[this.snakeBody.length - 1][0];
     var snakeEndy = this.snakeBody[this.snakeBody.length - 1][1];
     switch (this.direct) {
       case "right":
-      this.snakeBody.push([snakeEndx - 1,snakeEndy,'body']);
+        this.snakeBody.push([snakeEndx - 1, snakeEndy, "body"]);
         break;
       case "left":
-      this.snakeBody.push([snakeEndx + 1,snakeEndy,'body']);
+        this.snakeBody.push([snakeEndx + 1, snakeEndy, "body"]);
         break;
       case "up":
-        this.snakeBody.push([snakeEndx,snakeEndy - 1,'body']);
+        this.snakeBody.push([snakeEndx, snakeEndy - 1, "body"]);
         break;
       case "buttom":
-        this.snakeBody.push([snakeEndx,snakeEndy + 1,'body']);
+        this.snakeBody.push([snakeEndx, snakeEndy + 1, "body"]);
         break;
       default:
         break;
     }
-}
-if(this.snakeBody[0][0] < 0 || this.snakeBody[0][0] >= this.mapW/20){
-    console.log('111');
-}
-if(this.snakeBody[0][1] < 0 || this.snakeBody[0][1] >= this.mapH/20){
-    console.log('111');
-}
-var snakeHX = this.snakeBody[0][0];
-var snakeHY = this.snakeBody[0][1];
-for (var i = 1; i < this.snakeBody.length; i++) {
-    if(snakeHX == snakeBody[i][0] && snakeHY == snakeBody[i][1]) {
-        
+  }
+  if (this.snakeBody[0][0] < 0 || this.snakeBody[0][0] >= this.mapW / 20) {
+    relodGame();
+  }
+  if (this.snakeBody[0][1] < 0 || this.snakeBody[0][1] >= this.mapH / 20) {
+    relodGame();
+  }
+  var snakeHX = this.snakeBody[0][0];
+  var snakeHY = this.snakeBody[0][1];
+  for (var i = 1; i < this.snakeBody.length; i++) {
+    if (snakeHX == snakeBody[i][0] && snakeHY == snakeBody[i][1]) {
+      relodGame();
     }
-}
+  }
 }
 function removeClass(className) {
   var ele = document.getElementsByClassName(className);
@@ -206,4 +231,20 @@ function setDerict(code) {
     default:
       break;
   }
+}
+
+function relodGame() {
+  removeClass("snake");
+  removeClass("food");
+  clearInterval(snakeMove);
+  this.snakeBody = [[7, 1, "head"], [6, 1, "body"], [5, 1, "body"]];
+  this.direct = "right";
+  this.left = false;
+  this.right = false;
+  this.up = true;
+  this.buttom = true;
+  over.style.display = "block";
+  fen.innerHTML = this.score;
+  this.score = 0;
+  scoreBox.innerHTML = this.score;
 }
