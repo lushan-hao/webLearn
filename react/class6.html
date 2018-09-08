@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.production.min.js"></script>
+    <script src="react-dom.production.min.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    class Dialog extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                this.state={
+                    type:'登陆',
+                    isShow:false
+                }
+                this.closeF = this.closeF.bind(this);
+            }
+        }
+        open(type){
+            this.setState({
+                type:type,
+                isShow:false
+            })
+        }
+        closeF(){
+            this.setState({
+                isShow: false
+            })
+        }
+        render(){
+            return(
+                <div>
+                <DiaBtn>
+                <button onClick={this.open.bind(this,'登陆')}>登陆</button>
+                <button onClick={this.open.bind(this,'注册'>注册</button>
+                </DiaBtn>
+                <DiaContent closeC={this.closeF} isShow={this.state.isShow} title={this.state.title}/>
+                </div>
+            )
+        }
+    }
+    function DiaBtn(props) {
+        return(
+            <div>
+            {props.children}
+            </div>
+        )
+    }
+    function DiaContent(props){
+        return(
+            <div className="dia-bg style={{}}">
+            <div className='dia-content'>
+            <header>
+            <div>{props.title}</div>
+            <div onClick={props.closeC}>X</div>
+            </header>
+            </div>
+            </div>
+        )
+    }
+
+    ReactDOM.render(){
+        <Dialog/>,
+        document.getElementById('root')
+    };
+    </script>
+</body>
+
+</html>

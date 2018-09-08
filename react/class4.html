@@ -18,17 +18,54 @@
             this.state={
                 count: 0
             }
+            this.add = this.add.bind(this);
+            this.change = this.change.bind(this);
         }
-        renter(){
+        add(){
+            this.setState({
+                count:this.state.count+this.props.counts
+            })
+        }
+        change(){
+            this.props.changeC('hello world')
+        }
+        render(){
             return(
                 <div>
                 <h1>{this.state.count}</h1>
-                <button>加一</button>
-                <button>change</button>
+                <button onClick={this.add}>加一</button>
+                <button onClick={this.change}>change</button>
                 </div>
             )
         }
     }
+    class Add extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:'hello',
+                num:10
+            }
+            this.changeF = this.changeF.bind(this);
+        }
+        changeF(text){
+            this.setState({
+                count:text
+            })
+        }
+        render(){
+            return(
+                <div>
+                {this.state.count}
+                <Person changeC={this.changeF} counts={this.state.num}/>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Add/>,
+        document.getElementById('root')
+    )
 </script>
 
 <body>
