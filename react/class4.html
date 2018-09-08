@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.production.min.js"></script>
+    <script src="react-dom.production.min.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<div id="root"></div>
+<script type="text/babel">
+    class Person extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count: 0
+            }
+        }
+        renter(){
+            return(
+                <div>
+                <h1>{this.state.count}</h1>
+                <button>加一</button>
+                <button>change</button>
+                </div>
+            )
+        }
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
