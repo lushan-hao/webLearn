@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="react.production.min.js"></script>
+    <script src="react-dom.production.min.js"></script>
+    <script src="browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    class TestFrom extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                inp:'',
+            }
+            this.change = this.change.bind(this);
+        }
+        change(even){
+            console.log(even.target.name)
+            let name =even.target.name
+            this.setState({
+                [name]:even.trage.value
+            })
+        }
+        render(){
+            return(
+                <form>
+                    
+                    <input type="text" name="inp" onChange={this.change}/>
+                    {this.state.inp}
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <TestFrom/>,
+        document.getElementById('root')
+    )
+
+    </script>
+    
+</body>
+</html>
