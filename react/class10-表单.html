@@ -48,7 +48,8 @@
               <option value="mango">Mango</option>
             </select>
             
-            <input type="checkbox" name="che" checked={this.state.che} onChange={this.change}/>
+            <input type="checkbox" name="che" checked={this.state.che}
+             onChange={this.change}/>
             <input type="submit" value="提交"/>
             <p>{this.state.sel}{this.state.inp}
             {this.state.che?'true':'false'}</p>
