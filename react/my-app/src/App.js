@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Class1 from './First/Class1.js';
-import Class2 from './First/Class2.js';
+import Class1 from './component/Class1.js';
+import Class2 from './component/Class2.js';
 import { 
   BrowserRouter as Router, 
   Route, 
