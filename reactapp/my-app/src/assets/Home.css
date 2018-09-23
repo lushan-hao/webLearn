@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 轮播图 */
+.nav-test{
+    background-color: #fff;
+}
+.nav-test .test-i{
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+.nav-test .test-i img{
+    height: 50px;
+  }
+
+/* 轮播图结束 */
+
+.nav-like{
+    background-color: #fff;
+}
+.nav-like .like-i{
+    text-align: center;
+}
+.nav-like .like-i h3{
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .nav-like .like-i img{
+    height: 80px;
+    width: 80px;
+  }
+

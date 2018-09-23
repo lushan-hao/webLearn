@@ -16,7 +16,6 @@ export default class Test extends Component {
       }
       render() {
         return (
-            1
           <WingBlank>
             <Carousel
               autoplay={false}
