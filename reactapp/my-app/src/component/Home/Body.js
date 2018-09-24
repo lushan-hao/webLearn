@@ -10,7 +10,8 @@ export default class Body extends Component {
       <div>
         <Item
           arrow="horizontal"
-          thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+          thumb
+          ="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
           multipleLine
           onClick={() => {}}
         >
