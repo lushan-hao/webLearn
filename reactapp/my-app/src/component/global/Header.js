@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 import {NavBar, Icon } from 'antd-mobile';
 
 export default class Header extends Component {
