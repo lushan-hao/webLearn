@@ -5,6 +5,7 @@ import {NavBar, Icon } from 'antd-mobile';
 export default class Header extends Component {
   render() {
     return (
+      
       <div className="nav-bar">
          <NavBar
       mode="dark"
