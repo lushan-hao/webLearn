@@ -1,4 +1,5 @@
 <template>
+
     <ul class="clearfix">
         <li @click="gotoDetail(index)" v-for='(menu,index) in $store.state.photoList' :key="menu.src" class="photoAll">
             <img :src="menu.src" alt="">
