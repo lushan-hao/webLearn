@@ -5,6 +5,7 @@
             <img :src="menu.src" alt="">
         </li>
     </ul>
+    
 </template>
 
 
