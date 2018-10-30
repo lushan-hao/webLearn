@@ -7,6 +7,7 @@ Vue.use(VueTouch, {name: 'v-touch'})
 Vue.config.productionTip = false;
 
 
+
 import '@/assets/css/reset.css';
 import '@/assets/js/rem.js'
 
