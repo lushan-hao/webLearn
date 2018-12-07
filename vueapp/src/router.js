@@ -13,14 +13,13 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [{
-    path: '/',
-    redirect: '/movie'
-  },
-  {
     path: '/movie',
     name: 'movie',
     component: Movie
   }, {
+    path: '/',
+    redirect: '/music'
+  },{
     path: '/music',
     name: 'music',
     component: Music

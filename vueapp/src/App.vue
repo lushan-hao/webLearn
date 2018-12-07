@@ -27,15 +27,16 @@ export default {
     return {
       menuList: [
         {
-          title: '电影',
-          bgColor: '#e54847',
-          name: 'movie',
-          path: '/movie'
-        },{
           title: '音乐',
           bgColor: '#009688',
           name: 'music',
           path: '/music'
+        },
+        {
+          title: '电影',
+          bgColor: '#e54847',
+          name: 'movie',
+          path: '/movie'
         },{
           title: '书籍',
           bgColor: '#795548',

@@ -15,8 +15,10 @@ export default {
     created(){
         // console.log('music');
         this.$emit('switchTab', 'music');
-        axios.get('/data/musicdata.json').then(res=>{
-            this.musicList = res.data.musicData;
+        // let url1 = 'https://api.myjson.com/bins/jat2m';
+        axios.get('/data/music.json').then(res=>{
+            this.musicList = res.data.songs;
+            console.log(this.musicList);
         });
     },
     components: {
