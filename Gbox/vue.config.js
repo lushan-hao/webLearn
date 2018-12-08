@@ -3,5 +3,11 @@ module.exports = {
     devServer: {
         port: 8082,
         open: true
-    }
+    },
+    baseUrl: process.env.NODE_ENV === 'production'
+    ? './'
+    : '/'
+    // build: {
+    //     assetsPublicPath: './',
+    // }
 };

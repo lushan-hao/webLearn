@@ -28,13 +28,13 @@ export default {
       menuList: [
         {
           title: '音乐',
-          bgColor: '#009688',
+          bgColor: '#31c27c',
           name: 'music',
           path: '/music'
         },
         {
           title: '电影',
-          bgColor: '#e54847',
+          bgColor: '#ef4238',
           name: 'movie',
           path: '/movie'
         },{
@@ -44,7 +44,7 @@ export default {
           path: '/book'
         },{
           title: '图片',
-          bgColor: '#3f51b5',
+          bgColor: '#44b2d5',
           name: 'photo',
           path: '/photo'
         }
