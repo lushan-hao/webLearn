@@ -35,7 +35,6 @@ export default {
         this.$emit('switchTab', 'book');
         axios.get('https://api.myjson.com/bins/dcoqm').then(res=>{
             this.bookList = res.data.data;
-            console.log(this.bookList);
         });
     },
     components: {
